@@ -13,11 +13,7 @@ class EmailParser
 
 
   def parse
-    email_array = @emails.split(" ")
-    email_array.map! do |email|
-      email = email.delete(",")
-      end
-      email_array.uniq
+    email_array = @emails.gsub(/,/,"").split(" ").uniq
   end
 
 end
